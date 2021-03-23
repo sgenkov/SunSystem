@@ -1,0 +1,115 @@
+{
+    "globes": [
+        {
+            "name": "sun",
+            "position" : {
+                "x": 625,
+                "y": 456
+            },
+            "radius": 12,
+            "speed": 0,
+            "color": "0xFCE032",
+            "orbitalRadius": 0
+        },
+        {
+            "name": "mercury",
+            "position" : {
+                "x": 625,
+                "y": 456
+            },
+            "radius": 7,
+            "speed": 0.01,
+            "color": "0xCBD5D2",
+            "orbitalRadius": 30
+        },
+        {
+            "name": "venus",
+            "position" : {
+                "x": 625,
+                "y": 456
+            },
+            "radius": 10,
+            "speed": 0.011,
+            "color": "0xB17A38",
+            "orbitalRadius": 60
+        },
+        {
+            "name": "earth",
+            "position" : {
+                "x": 625,
+                "y": 456
+            },
+            "radius": 14,
+            "speed": 0.012,
+            "color": "0x2FE3D6",
+            "orbitalRadius": 97
+        },
+        {
+            "name": "moon",
+            "position" : {
+                "x": 625,
+                "y": 456
+            },
+            "radius": 3,
+            "speed": -0.024,
+            "color": "0xE6F5F4",
+            "orbitalRadius": 19,
+            "parent": "earth"
+        },
+        {
+            "name": "mars",
+            "position" : {
+                "x": 625,
+                "y": 456
+            },
+            "radius": 10,
+            "speed": 0.013,
+            "color": "0xBE4606",
+            "orbitalRadius": 140
+        },
+        {
+            "name": "jupiter",
+            "position" : {
+                "x": 625,
+                "y": 456
+            },
+            "radius": 7,
+            "speed": -0.009,
+            "color": "0xEAB8E3",
+            "orbitalRadius": 180
+        },
+        {
+            "name": "saturn",
+            "position" : {
+                "x": 625,
+                "y": 456
+            },
+            "radius": 7,
+            "speed": 0.004,
+            "color": "0xE6E397",
+            "orbitalRadius": 230
+        },
+        {
+            "name": "urenus",
+            "position" : {
+                "x": 625,
+                "y": 456
+            },
+            "radius": 7,
+            "speed": 0.002,
+            "color": "0x97E1E6",
+            "orbitalRadius": 243
+        },
+        {
+            "name": "neptune",
+            "position" : {
+                "x": 625,
+                "y": 456
+            },
+            "radius": 7,
+            "speed": 0.001,
+            "color": "0x6755ED",
+            "orbitalRadius": 277
+        }
+    ]
+}
