@@ -12,8 +12,15 @@ export default class Planet {
         this.parentName = parentName;
         this.cycle = 0;
         this.geometry = new THREE.BoxGeometry();
-        this.material = new THREE.MeshBasicMaterial({ color: this.color });
+        this.material = new THREE.MeshStandardMaterial({ color: this.color });
         this.cube = new THREE.Mesh(this.geometry, this.material);
+
+        // const sphereGeometry = new THREE.SphereGeometry(5, 32, 32);
+        // const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000 });
+        // this.cube= new THREE.Mesh(sphereGeometry, sphereMaterial);
+
+        this.cube.castShadow = true; //default is false
+        this.cube.receiveShadow = true; //default
         scene.add(this.cube);
     };
     updatePosition = () => {
