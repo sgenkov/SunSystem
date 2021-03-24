@@ -8,7 +8,7 @@ export default class GlobesParser {
 
     extractObjects = () => {
         this.source.globes.forEach(globe => {
-            // if (globe.name !== "mercury") return;
+            // if (globe.name !== "mars") return;
             const name = globe.name;
             const position = globe.position;
             const radius = globe.radius;

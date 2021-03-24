@@ -22,6 +22,7 @@ export const system = new System();
 document.body.appendChild(renderer.domElement);
 
 camera.position.z = 5;
+
 // const animate = () => {
 //   requestAnimationFrame(animate);
 //   // cube.rotation.x += 0.01;

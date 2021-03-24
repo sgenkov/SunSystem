@@ -14,7 +14,9 @@
   "dependencies": {
     "@pixi/core": "^5.3.3",
     "@pixi/graphics": "^5.3.3",
+    "@types/dotenv": "^8.2.0",
     "@types/three": "^0.126.1",
+    "dotenv": "^8.2.0",
     "pixi.js": "^5.3.3",
     "three": "^0.126.1"
   },

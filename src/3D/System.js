@@ -10,27 +10,33 @@ export default class System {
         };
         this.globes = [];
         this.systemCycle = 0;
+        this.keysPressed = {};
         this.init();
     };
     
     init = () => {
         this.globesParser = new GlobesParser(base_scene, this.globes);
         this.globesParser.extractObjects();
-        // app.ticker.add(this.systemTicker);
         this.systemTicker();
-        console.log(this.globes);
+        document.addEventListener("keydown", (e) => this.keysDown(e));
+        document.addEventListener("keyup", (e) => this.keysUp(e));
     };
 
-    systemTicker = () => {
+     keysDown(e) {
+        //  console.log(e.keyCode);
+        this.keysPressed[`${e.keyCode}`] = true;
+    };
 
-        // this.updateCycle();
+     keysUp(e) {
+        this.keysPressed[`${e.keyCode}`] = false;
+    };
+    systemTicker = () => {
+      this.keyHandler();
+
         this.globes.forEach(globe => {
             globe?.updatePosition();
         });
         requestAnimationFrame(this.systemTicker);
-        // cube.rotation.x += 0.01;
-        // cube.rotation.y += 0.01;
-        // cube.rotation.z += 0.01;
         renderer.render(scene, camera);
     };
 
@@ -40,5 +46,29 @@ export default class System {
         } else {
             this.systemCycle = 0;
         };
+    };
+
+    keyHandler = () => {
+        if (this.keysPressed["87"] === true) { // W - UP
+            camera.position.x+=0.1;
+        };
+        if (this.keysPressed["81"] === true) { // W - UP
+            camera.position.x-=0.1;
+        };
+        if (this.keysPressed["65"] === true) { // W - UP
+            camera.position.y+=0.1;
+        };
+        if (this.keysPressed["83"] === true) { // W - UP
+            camera.position.y-=0.1;
+        };
+        if (this.keysPressed["90"] === true) { // W - UP
+            camera.position.z+=0.1;
+        };
+        if (this.keysPressed["88"] === true) { // W - UP
+            camera.position.z-=0.1;
+            // camera.rotation.x+= 0.1;
+        };
+
+        // console.log(camera.position);
     };
 };
