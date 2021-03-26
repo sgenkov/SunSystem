@@ -1,4 +1,5 @@
-import { scene, system } from '../index';
+// import { scene, system } from '../index';
+import { system } from '../index';
 import * as THREE from 'three';
 export default class Planet {
     constructor(name, position, radius, speed, color, orbitalRadius, parentName) {
@@ -11,7 +12,7 @@ export default class Planet {
         this.orbitalRadius = orbitalRadius;
         this.parentName = parentName;
         this.cycle = 0;
-        this.geometry = new THREE.BoxGeometry();
+        this.geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
         this.material = new THREE.MeshStandardMaterial({ color: this.color });
         this.cube = new THREE.Mesh(this.geometry, this.material);
 
@@ -21,7 +22,8 @@ export default class Planet {
 
         this.cube.castShadow = true; //default is false
         this.cube.receiveShadow = true; //default
-        scene.add(this.cube);
+        // console.log(this.cube);
+        // system.scene.add(this.cube);
     };
     updatePosition = () => {
         this.updateInnerCycle();
