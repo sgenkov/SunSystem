@@ -4,7 +4,8 @@
             "name": "sun",
             "position" : {
                 "x": 625,
-                "y": 456
+                "y": 456,
+                "z": 0
             },
             "radius": 12,
             "speed": 0,
@@ -15,7 +16,8 @@
             "name": "mercury",
             "position" : {
                 "x": 625,
-                "y": 456
+                "y": 456,
+                "z": 0
             },
             "radius": 7,
             "speed": 0.01,
@@ -26,7 +28,8 @@
             "name": "venus",
             "position" : {
                 "x": 625,
-                "y": 456
+                "y": 456,
+                "z": 0
             },
             "radius": 10,
             "speed": 0.011,
@@ -37,7 +40,8 @@
             "name": "earth",
             "position" : {
                 "x": 625,
-                "y": 456
+                "y": 456,
+                "z": 0
             },
             "radius": 14,
             "speed": 0.012,
@@ -48,7 +52,8 @@
             "name": "moon",
             "position" : {
                 "x": 625,
-                "y": 456
+                "y": 456,
+                "z": 0
             },
             "radius": 3,
             "speed": -0.024,
@@ -60,7 +65,8 @@
             "name": "mars",
             "position" : {
                 "x": 625,
-                "y": 456
+                "y": 456,
+                "z": 0
             },
             "radius": 10,
             "speed": 0.013,
@@ -71,7 +77,8 @@
             "name": "jupiter",
             "position" : {
                 "x": 625,
-                "y": 456
+                "y": 456,
+                "z": 0
             },
             "radius": 7,
             "speed": -0.009,
@@ -82,7 +89,8 @@
             "name": "saturn",
             "position" : {
                 "x": 625,
-                "y": 456
+                "y": 456,
+                "z": 0
             },
             "radius": 7,
             "speed": 0.004,
@@ -93,7 +101,8 @@
             "name": "urenus",
             "position" : {
                 "x": 625,
-                "y": 456
+                "y": 456,
+                "z": 0
             },
             "radius": 7,
             "speed": 0.002,
@@ -104,7 +113,8 @@
             "name": "neptune",
             "position" : {
                 "x": 625,
-                "y": 456
+                "y": 456,
+                "z": 0
             },
             "radius": 7,
             "speed": 0.001,

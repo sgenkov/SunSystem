@@ -7,18 +7,19 @@ export default class Planet {
         this.name = name;
         this.position = position;
         this.radius = radius;
+        console.log(radius);
         this.speed = speed;
         this.color = +color;
         this.orbitalRadius = orbitalRadius;
         this.parentName = parentName;
         this.cycle = 0;
-        this.geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-        this.material = new THREE.MeshStandardMaterial({ color: this.color });
-        this.cube = new THREE.Mesh(this.geometry, this.material);
+        // this.geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
+        // this.material = new THREE.MeshStandardMaterial({ color: this.color });
+        // this.cube = new THREE.Mesh(this.geometry, this.material);
 
-        // const sphereGeometry = new THREE.SphereGeometry(5, 32, 32);
-        // const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000 });
-        // this.cube= new THREE.Mesh(sphereGeometry, sphereMaterial);
+        const sphereGeometry = new THREE.SphereGeometry(this.radius/70, 32, 32);
+        const sphereMaterial = new THREE.MeshStandardMaterial({ color: this.color });
+        this.cube= new THREE.Mesh(sphereGeometry, sphereMaterial);
 
         this.cube.castShadow = true; //default is false
         this.cube.receiveShadow = true; //default
