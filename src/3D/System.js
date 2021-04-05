@@ -58,7 +58,7 @@ export default class System {
 
 
         document.body.appendChild(this.renderer.domElement);
-        this.globes.forEach(globe => this.scene.add(globe.cube));
+        this.globes.forEach(globe => this.scene.add(globe.body));
 
         this.systemTicker();
         document.addEventListener("keydown", (e) => this.keysDown(e));

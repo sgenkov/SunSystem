@@ -19,10 +19,10 @@ export default class Planet {
 
         const sphereGeometry = new THREE.SphereGeometry(this.radius / 70, 32, 32);
         const sphereMaterial = new THREE.MeshStandardMaterial({ color: this.color });
-        this.cube = new THREE.Mesh(sphereGeometry, sphereMaterial);
+        this.body = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
-        this.cube.castShadow = true; //default is false
-        this.cube.receiveShadow = true; //default
+        this.body.castShadow = true; //default is false
+        this.body.receiveShadow = true; //default
         // console.log(this.cube);
         // system.scene.add(this.cube);
     };
@@ -30,17 +30,17 @@ export default class Planet {
         this.updateInnerCycle();
         const scale = 52;
         if (this.PARENT) {
-            this.cube.position.x = this.orbitalRadius * Math.cos(this.cycle) + this.PARENT.orbitalRadius * Math.cos(this.PARENT.cycle);
-            this.cube.position.y = this.orbitalRadius * Math.sin(this.cycle) + this.PARENT.orbitalRadius * Math.sin(this.PARENT.cycle);
+            this.body.position.x = this.orbitalRadius * Math.cos(this.cycle) + this.PARENT.orbitalRadius * Math.cos(this.PARENT.cycle);
+            this.body.position.y = this.orbitalRadius * Math.sin(this.cycle) + this.PARENT.orbitalRadius * Math.sin(this.PARENT.cycle);
         } else {
-            this.cube.position.x = this.orbitalRadius * Math.cos(this.cycle);
-            this.cube.position.y = this.orbitalRadius * Math.sin(this.cycle);
+            this.body.position.x = this.orbitalRadius * Math.cos(this.cycle);
+            this.body.position.y = this.orbitalRadius * Math.sin(this.cycle);
         };
 
-        this.cube.position.x /= scale;
-        this.cube.position.y /= scale;
+        this.body.position.x /= scale;
+        this.body.position.y /= scale;
 
-        this.position = this.cube.position;
+        this.position = this.body.position;
 
     };
 
