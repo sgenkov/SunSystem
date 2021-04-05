@@ -5,10 +5,10 @@ import * as THREE from 'three';
 export default class System {
     constructor() {
         this.globesParser = null;
-        this.position = {
-            x: 0,
-            y: 0
-        };
+        // this.position = {
+        //     x: 0,
+        //     y: 0
+        // };
         this.globes = [];
         this.systemCycle = 0;
         this.keysPressed = {};
@@ -36,6 +36,7 @@ export default class System {
     init = () => {
         this.globesParser = new GlobesParser(base_scene, this.globes);
         this.globesParser.extractObjects();
+        this.globesParser.assignParents();
 
         this.scene = new THREE.Scene();
 
@@ -87,18 +88,19 @@ export default class System {
     };
 
     keysDown(e) {
-         console.log(e.keyCode);
+        //  console.log(e.keyCode);
         this.keysPressed[`${e.keyCode}`] = true;
     };
 
     keysUp(e) {
         this.keysPressed[`${e.keyCode}`] = false;
     };
+
     systemTicker = () => {
         this.keyHandler();
 
         this.globes.forEach(globe => {
-            globe?.updatePosition();
+            globe.updatePosition();
         });
         requestAnimationFrame(this.systemTicker);
         this.renderer.render(this.scene, this.camera);

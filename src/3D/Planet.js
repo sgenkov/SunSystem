@@ -7,7 +7,7 @@ export default class Planet {
         this.name = name;
         this.position = position;
         this.radius = radius;
-        console.log(radius);
+        // console.log(radius);
         this.speed = speed;
         this.color = +color;
         this.orbitalRadius = orbitalRadius;
@@ -17,9 +17,9 @@ export default class Planet {
         // this.material = new THREE.MeshStandardMaterial({ color: this.color });
         // this.cube = new THREE.Mesh(this.geometry, this.material);
 
-        const sphereGeometry = new THREE.SphereGeometry(this.radius/70, 32, 32);
+        const sphereGeometry = new THREE.SphereGeometry(this.radius / 70, 32, 32);
         const sphereMaterial = new THREE.MeshStandardMaterial({ color: this.color });
-        this.cube= new THREE.Mesh(sphereGeometry, sphereMaterial);
+        this.cube = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
         this.cube.castShadow = true; //default is false
         this.cube.receiveShadow = true; //default
@@ -28,27 +28,20 @@ export default class Planet {
     };
     updatePosition = () => {
         this.updateInnerCycle();
-        // if (this.parent) {
-        //     this.graphic.x = this.parent.position.x + this.orbitalRadius * Math.cos(this.cycle);
-        //     this.graphic.y = this.parent.position.y + this.orbitalRadius * Math.sin(this.cycle);
-        // } else {
-        //     this.assignParent();
-        // this.graphic.x = this.orbitalRadius * Math.cos(this.cycle);
-        // this.graphic.y = this.orbitalRadius * Math.sin(this.cycle);
-        // };
         const scale = 52;
-        this.cube.position.x = this.orbitalRadius * Math.cos(this.cycle);
-        this.cube.position.y = this.orbitalRadius * Math.sin(this.cycle);
+        if (this.PARENT) {
+            this.cube.position.x = this.orbitalRadius * Math.cos(this.cycle) + this.PARENT.orbitalRadius * Math.cos(this.PARENT.cycle);
+            this.cube.position.y = this.orbitalRadius * Math.sin(this.cycle) + this.PARENT.orbitalRadius * Math.sin(this.PARENT.cycle);
+        } else {
+            this.cube.position.x = this.orbitalRadius * Math.cos(this.cycle);
+            this.cube.position.y = this.orbitalRadius * Math.sin(this.cycle);
+        };
+
         this.cube.position.x /= scale;
         this.cube.position.y /= scale;
 
-        this.position.x = this.cube.position.x;
-        this.position.y = this.cube.position.y;
-        this.position.z = this.cube.position.z;
+        this.position = this.cube.position;
 
-        this.cube.rotation.z += 0.01;
-        this.cube.rotation.y += 0.01;
-        this.cube.rotation.x += 0.01;
     };
 
     updateInnerCycle = () => {
@@ -60,7 +53,8 @@ export default class Planet {
     };
 
     assignParent = () => {
-        this.parent = system.globes.find(globe => globe.name === this.parentName);
+        // this.parent = system.globes.find(globe => globe.name === this.parentName);
+        console.log('REMOVE THIS METHOD');
     };
 
 };
