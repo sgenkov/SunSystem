@@ -13,18 +13,12 @@ export default class Planet {
         this.orbitalRadius = orbitalRadius;
         this.parentName = parentName;
         this.cycle = 0;
-        // this.geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-        // this.material = new THREE.MeshStandardMaterial({ color: this.color });
-        // this.cube = new THREE.Mesh(this.geometry, this.material);
-
         const sphereGeometry = new THREE.SphereGeometry(this.radius / 70, 32, 32);
         const sphereMaterial = new THREE.MeshStandardMaterial({ color: this.color });
         this.body = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
         this.body.castShadow = true; //default is false
         this.body.receiveShadow = true; //default
-        // console.log(this.cube);
-        // system.scene.add(this.cube);
     };
     updatePosition = () => {
         this.updateInnerCycle();
@@ -52,10 +46,6 @@ export default class Planet {
         };
     };
 
-    assignParent = () => {
-        // this.parent = system.globes.find(globe => globe.name === this.parentName);
-        console.log('REMOVE THIS METHOD');
-    };
 
 };
 

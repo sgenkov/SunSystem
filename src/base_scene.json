@@ -120,6 +120,32 @@
             "speed": 0.001,
             "color": "0x6755ED",
             "orbitalRadius": 277
+        },
+        {
+            "name": "a",
+            "position" : {
+                "x": 625,
+                "y": 456,
+                "z": 0
+            },
+            "radius": 7,
+            "speed": 0.04,
+            "color": "0xA755EA",
+            "orbitalRadius": 27,
+            "parent": "moon"
+        },
+        {
+            "name": "b",
+            "position" : {
+                "x": 625,
+                "y": 456,
+                "z": 0
+            },
+            "radius": 7,
+            "speed": 0.03,
+            "color": "0x6715ED",
+            "orbitalRadius": 27,
+            "parent": "a"
         }
     ]
 }

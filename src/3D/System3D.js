@@ -66,8 +66,9 @@ export default class System {
     };
 
     lightInit = () => {
-        this.light = new THREE.DirectionalLight(0xffffff, 1, 100);
-        this.light.position.set(-1, 0, 0); //default; light shining from top // set( 0, 1, 0 )
+        // this.light = new THREE.DirectionalLight(0xffffff, 1, 100);
+        this.light = new THREE.PointLight(0xffffff, 1, 100);
+        this.light.position.set(0, 0, 0); //default; light shining from top // set( 0, 1, 0 )
         this.light.castShadow = true; // default false
 
         //Set up shadow properties for the light
@@ -78,7 +79,7 @@ export default class System {
         this.scene.add(this.light);
 
         this.light2 = new THREE.DirectionalLight(0xffffff, 1, 100);
-        this.light2.position.set(-1,1, 0); //default; light2 shining from top // set( 0, 1, 0 )
+        this.light2.position.set(0.5, 0.5, 0); //default; light2 shining from top // set( 0, 1, 0 )
         this.light2.castShadow = true; // default false
         this.light2.shadow.mapSize.width = 512; // default
         this.light2.shadow.mapSize.height = 512; // default

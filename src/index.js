@@ -1,7 +1,8 @@
 import registerServiceWorker from "./registerServiceWorker";
 import { Application } from 'pixi.js';
 // import System from "./3D/System";
-import System from './3D/System';
+import System from './2D/System2D';
+import Switcher from "./Mode/Switcher";
 
 export const app = new Application({
   width: window.innerWidth - 15,
@@ -10,7 +11,7 @@ export const app = new Application({
 });
 
 // export const system = new System();
-// document.body.appendChild(app.view);
+document.body.appendChild(app.view);
 
 
 export const system = new System(); // 3D 
