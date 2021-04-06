@@ -2,7 +2,7 @@ import GlobesParser from "./GlobesParser";
 import base_scene from '../base_scene.json';
 import * as THREE from 'three';
 // import { renderer, camera, scene } from "..";
-export default class System {
+export default class System3D {
     constructor() {
         this.globesParser = null;
         // this.position = {

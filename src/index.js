@@ -1,7 +1,7 @@
 import registerServiceWorker from "./registerServiceWorker";
 import { Application } from 'pixi.js';
-// import System from "./3D/System";
-import System from './2D/System2D';
+import System3D from "./3D/System3D";
+import System2D from './2D/System2D';
 import Switcher from "./Mode/Switcher";
 
 export const app = new Application({
@@ -14,7 +14,7 @@ export const app = new Application({
 document.body.appendChild(app.view);
 
 
-export const system = new System(); // 3D 
+export const system = new System2D(); // 3D 
 
 
 
