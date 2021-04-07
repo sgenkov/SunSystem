@@ -26,9 +26,6 @@ export default class System3D {
     // sphere.receiveShadow = true; //default
     // scene.add( sphere );
 
-
-
-
     //Create a helper for the shadow camera (optional)
     // const helper = new THREE.CameraHelper( light.shadow.camera );
     // scene.add( helper );

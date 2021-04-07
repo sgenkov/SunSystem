@@ -18,6 +18,13 @@ export default class GlobesParser {
             const orbitalRadius = globe.orbitalRadius;
             this.target.push(new Planet(name, position, radius, speed, color, orbitalRadius, parent));
         });
+    };
 
+    assignParents = () => {
+        this.target.forEach(globe => {
+            if (globe.parentName) {
+                globe.PARENT = this.target.find(Globe => Globe.name === globe.parentName);
+            };
+        });
     };
 };

@@ -1,6 +1,7 @@
 import { Graphics } from 'pixi.js';
-import { app } from '../index';
-import { system } from '../index';
+// import { app } from '../index';
+import { switcher } from '../index';
+
 export default class Planet {
     constructor(name, position, radius, speed, color, orbitalRadius, parentName) {
         this.name = name;
@@ -15,15 +16,13 @@ export default class Planet {
         this.graphic.lineStyle(0);
         this.graphic.drawCircle(position.x, position.y, radius);
         this.graphic.endFill();
-        app.stage.addChild(this.graphic);
     };
     updatePosition = () => {
         this.updateInnerCycle();
-        if (this.parent) {
-            this.graphic.x = this.parent.position.x + this.orbitalRadius * Math.cos(this.cycle);
-            this.graphic.y = this.parent.position.y + this.orbitalRadius * Math.sin(this.cycle);
+        if (this.PARENT) {
+            this.graphic.x = this.PARENT.position.x + this.orbitalRadius * Math.cos(this.cycle);
+            this.graphic.y = this.PARENT.position.y + this.orbitalRadius * Math.sin(this.cycle);
         } else {
-            this.assignParent();
             this.graphic.x = this.orbitalRadius * Math.cos(this.cycle);
             this.graphic.y = this.orbitalRadius * Math.sin(this.cycle);
         };
@@ -37,10 +36,6 @@ export default class Planet {
         } else {
             this.cycle = 0;
         };
-    };
-
-    assignParent = () => {
-        this.parent = system.globes.find(globe => globe.name === this.parentName);
     };
 
 };
