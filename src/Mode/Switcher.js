@@ -6,11 +6,13 @@ import base_scene from "../base_scene.json";
 
 export default class Switcher {
     constructor(baseMode) {
+        this.currentMode = null;
         this.system = null;
         this.app = null;
         this.switch(baseMode);
     };
-    switch = (mode) => {
+    switch = (mode) => { //TODO Make state machine here
+        this.currentMode = mode;
         if (mode === '2D') {
             this.app = new Application({
                 width: window.innerWidth - 15,

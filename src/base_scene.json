@@ -131,7 +131,7 @@
             "radius": 7,
             "speed": 0.04,
             "color": "0xA755EA",
-            "orbitalRadius": 27,
+            "orbitalRadius": 20,
             "parent": "moon"
         },
         {
@@ -145,7 +145,7 @@
             "speed": 0.03,
             "color": "0x6715ED",
             "orbitalRadius": 27,
-            "parent": "a"
+            "parent": "mars"
         }
     ]
 }

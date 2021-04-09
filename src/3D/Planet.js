@@ -1,5 +1,3 @@
-// import { scene, system } from '../index';
-import { system } from '../index';
 import * as THREE from 'three';
 export default class Planet {
     constructor(name, position, radius, speed, color, orbitalRadius, parentName) {

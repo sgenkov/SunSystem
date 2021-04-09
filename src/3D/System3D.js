@@ -83,6 +83,9 @@ export default class System3D {
         this.light2.shadow.camera.near = 0.5; // default
         this.light2.shadow.camera.far = 500; // default
         this.scene.add(this.light2);
+
+        this.light3 = new THREE.AmbientLight(0x787875, 0.2)
+        this.scene.add(this.light3);
     };
 
     keysDown(e) {

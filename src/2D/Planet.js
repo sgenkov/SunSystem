@@ -1,6 +1,4 @@
 import { Graphics } from 'pixi.js';
-// import { app } from '../index';
-import { switcher } from '../index';
 
 export default class Planet {
     constructor(name, position, radius, speed, color, orbitalRadius, parentName) {
